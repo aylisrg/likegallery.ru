@@ -1,36 +1,31 @@
-```
-# WordPress specific ignores
-wp-content/cache/
-wp-content/uploads/
-wp-content/upgrade/
-*.sql
-*.log
+# Compiled and build artifacts
+*.pyc
+__pycache__/
 
 # Dependencies
 node_modules/
 vendor/
+*.zip
+*.tar.gz
 
-# Build artifacts
-build/
-dist/
-*.min.js
-*.min.css
+# Logs and temp files
+*.log
+*.tmp
+*.swp
 
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
 # Editors
 .vscode/
 .idea/
-*.swp
-*.swo
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log
-```
+# WordPress specific
+wp-content/cache/
+wp-content/uploads/
+*.sql
+wp-config.php
+wp-content/plugins/akismet/
+wp-content/themes/twenty*/
