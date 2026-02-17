@@ -2,25 +2,24 @@
 # WordPress specific ignores
 wp-content/cache/
 wp-content/uploads/
-wp-config.php
+wp-content/upgrade/
 *.sql
-*.dump
-*.backup
+*.log
 
 # Dependencies
 node_modules/
 vendor/
 
 # Build artifacts
-dist/
 build/
+dist/
 *.min.js
 *.min.css
 
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
 # Editors
 .vscode/
@@ -28,30 +27,10 @@ build/
 *.swp
 *.swo
 
-# Logs
-*.log
-wp-content/debug.log
-
 # OS
 .DS_Store
 Thumbs.db
 
-# Python (if present)
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.so
-
-# Compressed files
-*.zip
-*.gz
-*.tar
-*.tgz
-*.bz2
-*.xz
-*.7z
-*.rar
-*.zst
+# Logs
+*.log
 ```
