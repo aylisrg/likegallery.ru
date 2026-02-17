@@ -1,10 +1,21 @@
 ```
+# WordPress specific ignores
+wp-content/cache/
+wp-content/uploads/
+wp-config.php
+*.sql
+*.dump
+*.backup
+
 # Dependencies
 node_modules/
+vendor/
 
-# Logs and temp files
-*.log
-*.tmp
+# Build artifacts
+dist/
+build/
+*.min.js
+*.min.css
 
 # Environment
 .env
@@ -14,24 +25,24 @@ node_modules/
 # Editors
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Build artifacts
-dist/
-build/
-target/
+# Logs
+*.log
+wp-content/debug.log
 
-# Python
+# OS
+.DS_Store
+Thumbs.db
+
+# Python (if present)
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
 *.so
-.coverage
-htmlcov/
-.coverage.*
-.pytest_cache/
-.mypy_cache/
 
 # Compressed files
 *.zip
@@ -43,21 +54,4 @@ htmlcov/
 *.7z
 *.rar
 *.zst
-*.lz4
-*.lzh
-*.cab
-*.arj
-*.rpm
-*.deb
-*.Z
-*.lz
-*.lzo
-*.tar.gz
-*.tar.bz2
-*.tar.xz
-*.tar.zst
-
-# System files
-.DS_Store
-Thumbs.db
 ```
