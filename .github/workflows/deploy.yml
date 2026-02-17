@@ -15,7 +15,7 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./ # Откуда грузим (из репозитория)
+        local-dir: ./wordpress-project/ # Откуда грузим (из репозитория)
         server-dir: /www/likegallery.ru/ # Куда грузим (на хостинге)
         exclude: | # Что НЕ грузить (чтобы не сломать WP)
           **/.git*
