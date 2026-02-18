@@ -2,6 +2,7 @@ import { client } from '@/lib/sanity/client'
 import { FEATURED_SOLD_QUERY } from '@/lib/sanity/queries'
 import { HeroSection } from '@/components/home/HeroSection'
 import { FeaturedItems } from '@/components/home/FeaturedItems'
+import { MandalaDecoration } from '@/components/home/MandalaDecoration'
 import type { Item } from '@/types/sanity'
 
 export const revalidate = 3600
@@ -21,8 +22,36 @@ export default async function HomePage() {
       <FeaturedItems items={featuredItems} />
 
       {/* Inbound sourcing CTA section */}
-      <section className="py-20 bg-dark-soft">
-        <div className="section-container text-center max-w-3xl mx-auto">
+      <section className="relative py-20 bg-dark-soft overflow-hidden">
+
+        {/* Mandala left decorative accent */}
+        <div className="absolute -left-24 top-1/2 -translate-y-1/2 pointer-events-none hidden md:block">
+          <MandalaDecoration
+            size={380}
+            opacity={0.07}
+            className="mandala-pulse"
+          />
+        </div>
+
+        {/* Mandala right decorative accent */}
+        <div className="absolute -right-24 top-1/2 -translate-y-1/2 pointer-events-none hidden md:block">
+          <MandalaDecoration
+            size={380}
+            opacity={0.07}
+            className="mandala-pulse"
+          />
+        </div>
+
+        {/* Subtle gold radial glow behind content */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              'radial-gradient(ellipse 60% 70% at 50% 50%, rgba(212,175,55,0.06) 0%, transparent 70%)',
+          }}
+        />
+
+        <div className="relative z-10 section-container text-center max-w-3xl mx-auto">
           <p className="text-gold text-xs uppercase tracking-[0.3em] mb-4 font-medium">
             Продать предмет
           </p>

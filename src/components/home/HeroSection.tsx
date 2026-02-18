@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { MandalaDecoration } from './MandalaDecoration'
 
 export function HeroSection() {
   const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
@@ -7,19 +8,76 @@ export function HeroSection() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background gradient — atmospheric museum dark */}
-      <div className="absolute inset-0 bg-gradient-to-br from-dark via-[#120e08] to-[#1a1208]" />
 
-      {/* Subtle gold texture overlay */}
+      {/* ── VIDEO BACKGROUND ─────────────────────────────────────── */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/buddha-bg.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      />
+
+      {/* ── DARK OVERLAY (keeps text readable) ───────────────────── */}
+      <div className="absolute inset-0 bg-black/70" />
+
+      {/* ── ATMOSPHERIC GRADIENT ──────────────────────────────────── */}
       <div
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0"
         style={{
-          backgroundImage:
-            'radial-gradient(ellipse at 50% 50%, #d4af37 0%, transparent 70%)',
+          background:
+            'linear-gradient(135deg, rgba(26,18,8,0.85) 0%, rgba(10,8,4,0.7) 50%, rgba(20,14,4,0.85) 100%)',
         }}
       />
 
-      {/* Content */}
+      {/* ── GOLD RADIAL GLOW ──────────────────────────────────────── */}
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            'radial-gradient(ellipse 70% 60% at 50% 45%, rgba(212,175,55,0.35) 0%, transparent 70%)',
+        }}
+      />
+
+      {/* ── MANDALA LEFT (large, slow spin counter-clockwise) ─────── */}
+      <div className="absolute -left-32 top-1/2 -translate-y-1/2 pointer-events-none hidden lg:block">
+        <MandalaDecoration
+          size={520}
+          opacity={0.1}
+          className="mandala-spin-ccw"
+        />
+      </div>
+
+      {/* ── MANDALA RIGHT (large, slow spin clockwise) ────────────── */}
+      <div className="absolute -right-32 top-1/2 -translate-y-1/2 pointer-events-none hidden lg:block">
+        <MandalaDecoration
+          size={520}
+          opacity={0.1}
+          className="mandala-spin-cw"
+        />
+      </div>
+
+      {/* ── MANDALA TOP-CENTER (small, accent) ───────────────────── */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/3 pointer-events-none opacity-60">
+        <MandalaDecoration
+          size={220}
+          opacity={0.18}
+          className="mandala-spin-slow"
+        />
+      </div>
+
+      {/* ── GOLD BOTTOM VIGNETTE ──────────────────────────────────── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to top, rgba(26,18,8,1) 0%, rgba(26,18,8,0.6) 50%, transparent 100%)',
+        }}
+      />
+
+      {/* ── CONTENT ───────────────────────────────────────────────── */}
       <div className="relative z-10 section-container text-center py-24">
         <p className="text-gold text-xs sm:text-sm uppercase tracking-[0.3em] mb-6 font-medium animate-fade-in-up">
           Экспертная галерея восточного искусства
@@ -83,7 +141,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Bottom fade */}
+      {/* ── BOTTOM FADE TO DARK ───────────────────────────────────── */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-dark to-transparent" />
     </section>
   )

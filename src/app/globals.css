@@ -68,3 +68,56 @@
     box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.1);
   }
 }
+
+/* ─────────────────────────────────────────────
+   MANDALA ANIMATIONS
+   ───────────────────────────────────────────── */
+
+@keyframes mandalaSpinCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes mandalaSpinCCW {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes mandalaPulse {
+  0%, 100% { opacity: 0.10; transform: rotate(0deg) scale(1); }
+  50%       { opacity: 0.16; transform: rotate(180deg) scale(1.04); }
+}
+
+/* Slow clockwise — top-center accent mandala */
+.mandala-spin-slow {
+  animation: mandalaSpinCW 80s linear infinite;
+  transform-origin: center center;
+}
+
+/* Clockwise — right mandala */
+.mandala-spin-cw {
+  animation: mandalaSpinCW 120s linear infinite;
+  transform-origin: center center;
+}
+
+/* Counter-clockwise — left mandala */
+.mandala-spin-ccw {
+  animation: mandalaSpinCCW 100s linear infinite;
+  transform-origin: center center;
+}
+
+/* Pulse + spin — CTA section mandalas */
+.mandala-pulse {
+  animation: mandalaPulse 12s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .mandala-spin-slow,
+  .mandala-spin-cw,
+  .mandala-spin-ccw,
+  .mandala-pulse {
+    animation: none;
+  }
+}
