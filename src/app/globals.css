@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --dark: #1a1a1a;
+    --gold: #d4af37;
+    --parchment: #e8e0d0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #1a1a1a;
+    color: #e8e0d0;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  ::selection {
+    background-color: #d4af37;
+    color: #1a1a1a;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply bg-gold text-dark font-semibold px-6 py-3 rounded-lg hover:bg-gold/80 transition-colors duration-200 inline-block text-center;
+  }
+
+  .btn-outline-gold {
+    @apply border border-gold text-gold font-semibold px-6 py-3 rounded-lg hover:bg-gold hover:text-dark transition-colors duration-200 inline-block text-center;
+  }
+
+  .contact-pill {
+    @apply px-4 py-2 rounded-lg font-semibold text-sm shadow-md hover:opacity-90 transition-opacity inline-block text-center min-w-[140px];
+  }
+
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-title {
+    @apply text-3xl sm:text-4xl font-serif text-parchment mb-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-shadow {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .gold-border-glow {
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 0 20px rgba(212, 175, 55, 0.1);
+  }
+}
