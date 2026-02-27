@@ -1,8 +1,8 @@
 import { groq } from 'next-sanity'
 
-// Home page: last 6 sold items as portfolio showcase
+// Home page: all sold items as portfolio showcase
 export const FEATURED_SOLD_QUERY = groq`
-  *[_type == "item" && status == "sold"] | order(_createdAt desc) [0...6] {
+  *[_type == "item" && status == "sold"] | order(_createdAt desc) {
     _id,
     title,
     slug,

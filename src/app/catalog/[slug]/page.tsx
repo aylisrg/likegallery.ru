@@ -78,11 +78,12 @@ export default async function ItemPage({ params }: Props) {
             Каталог
           </Link>
           <span>/</span>
-          <span className="hover:text-gold transition-colors cursor-pointer"
-            onClick={() => history.back()}
+          <Link
+            href={`/catalog?category=${encodeURIComponent(item.category)}`}
+            className="hover:text-gold transition-colors"
           >
             {item.category}
-          </span>
+          </Link>
           <span>/</span>
           <span className="text-parchment/70 line-clamp-1">{item.title}</span>
         </nav>

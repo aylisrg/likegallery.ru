@@ -1,13 +1,23 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 import { ItemCard } from '@/components/catalog/ItemCard'
 import type { Item } from '@/types/sanity'
+
+const INITIAL_VISIBLE = 8
 
 interface FeaturedItemsProps {
   items: Item[]
 }
 
 export function FeaturedItems({ items }: FeaturedItemsProps) {
+  const [showAll, setShowAll] = useState(false)
+
   if (!items || items.length === 0) return null
+
+  const hasMore = items.length > INITIAL_VISIBLE
+  const visibleItems = showAll ? items : items.slice(0, INITIAL_VISIBLE)
 
   return (
     <section className="py-20 bg-dark" id="portfolio">
@@ -26,11 +36,25 @@ export function FeaturedItems({ items }: FeaturedItemsProps) {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6">
-          {items.map((item) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+          {visibleItems.map((item) => (
             <ItemCard key={item._id} item={item} />
           ))}
         </div>
+
+        {/* Show more / show less */}
+        {hasMore && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="btn-outline-gold py-2 px-6 text-sm"
+            >
+              {showAll
+                ? 'Свернуть'
+                : `Показать все (${items.length})`}
+            </button>
+          </div>
+        )}
 
         {/* CTA to full catalog */}
         <div className="text-center mt-12">
