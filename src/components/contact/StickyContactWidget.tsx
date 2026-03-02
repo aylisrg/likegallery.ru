@@ -39,21 +39,8 @@ export function StickyContactWidget({
             {telegram && (
               <ContactLink type="telegram" value={telegram} message={message} label="Telegram" />
             )}
-
             {max && (
               <ContactLink type="max" value={max} label="Max" />
-            )}
-            {avitoUrl && (
-              <ContactLink type="avito" value={avitoUrl} label="Авито" />
-            )}
-            {vkUrl && (
-              <ContactLink type="vk" value={vkUrl} label="ВКонтакте" />
-            )}
-            {rutubeUrl && (
-              <ContactLink type="rutube" value={rutubeUrl} label="Rutube" />
-            )}
-            {email && (
-              <ContactLink type="email" value={email} label={email} />
             )}
             {phone && (
               <ContactLink type="phone" value={phone} label={phone} />
@@ -82,21 +69,8 @@ export function StickyContactWidget({
             {telegram && (
               <ContactLink type="telegram" value={telegram} message={message} label="Telegram" fullWidth />
             )}
-
             {max && (
               <ContactLink type="max" value={max} label="Max" fullWidth />
-            )}
-            {avitoUrl && (
-              <ContactLink type="avito" value={avitoUrl} label="Авито" fullWidth />
-            )}
-            {vkUrl && (
-              <ContactLink type="vk" value={vkUrl} label="ВКонтакте" fullWidth />
-            )}
-            {rutubeUrl && (
-              <ContactLink type="rutube" value={rutubeUrl} label="Rutube" fullWidth className="col-span-2" />
-            )}
-            {email && (
-              <ContactLink type="email" value={email} label={email} fullWidth className="col-span-2" />
             )}
             {phone && (
               <ContactLink type="phone" value={phone} label={phone} fullWidth className="col-span-2" />
