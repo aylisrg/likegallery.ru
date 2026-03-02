@@ -43,9 +43,6 @@ export function StatusCTA({ item }: StatusCTAProps) {
   }
 
   if (status === 'restoration') {
-    const restMsg = encodeURIComponent(
-      `Здравствуйте, интересует информация о реставрации предмета «${title}».`
-    )
     return (
       <div className="bg-dark-soft border border-amber-700/30 rounded-xl p-6 space-y-4">
         <span className="inline-block bg-amber-700/20 text-amber-400 text-xs font-medium px-3 py-1 rounded-full border border-amber-700/40">

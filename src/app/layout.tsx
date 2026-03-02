@@ -33,7 +33,7 @@ export default function RootLayout({
   const rutubeUrl = process.env.NEXT_PUBLIC_RUTUBE_URL ?? ''
   const phone = process.env.NEXT_PUBLIC_PHONE ?? ''
   const email = process.env.NEXT_PUBLIC_EMAIL ?? ''
-  const tgChannel = process.env.NEXT_PUBLIC_TG_CHANNEL ?? ''
+
 
   return (
     <html lang="ru" className="scroll-smooth">
