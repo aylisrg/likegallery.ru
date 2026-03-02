@@ -6,22 +6,14 @@ import { ContactLink } from '@/components/ui/ContactLink'
 interface StickyContactWidgetProps {
   telegram: string
   max: string
-  avitoUrl: string
-  vkUrl: string
-  rutubeUrl: string
   phone: string
-  email: string
   message?: string
 }
 
 export function StickyContactWidget({
   telegram,
   max,
-  avitoUrl,
-  vkUrl,
-  rutubeUrl,
   phone,
-  email,
   message = 'Здравствуйте, хочу оценить предмет...',
 }: StickyContactWidgetProps) {
   const [isOpen, setIsOpen] = useState(false)

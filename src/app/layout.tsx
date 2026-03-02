@@ -49,11 +49,7 @@ export default function RootLayout({
         <StickyContactWidget
           telegram={telegram}
           max={max}
-          avitoUrl={avitoUrl}
-          vkUrl={vkUrl}
-          rutubeUrl={rutubeUrl}
           phone={phone}
-          email={email}
         />
       </body>
     </html>
