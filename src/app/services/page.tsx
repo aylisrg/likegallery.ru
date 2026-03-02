@@ -25,7 +25,7 @@ export default async function ServicesPage() {
   const restorationCases = serviceCases.filter((c) => c.type === 'restoration')
   const expertiseCases = serviceCases.filter((c) => c.type === 'expertise')
 
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
+
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
 
   return (
@@ -45,16 +45,7 @@ export default async function ServicesPage() {
                 Используем традиционные техники и современные материалы.
               </p>
             </div>
-            {whatsapp && (
-              <a
-                href={`https://wa.me/${whatsapp}?text=${encodeURIComponent('Здравствуйте, хочу узнать стоимость реставрации предмета. Можно отправить фото?')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold whitespace-nowrap flex-shrink-0"
-              >
-                Оценить реставрацию
-              </a>
-            )}
+
           </div>
 
           {restorationCases.length > 0 ? (
@@ -149,17 +140,7 @@ export default async function ServicesPage() {
             Бесплатная первичная оценка по фотографии. Выкупаем сразу, платим честно.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            {whatsapp && (
-              <a
-                href={`https://wa.me/${whatsapp}?text=${encodeURIComponent('Здравствуйте, хочу оценить предмет для продажи. Могу отправить фото.')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity"
-              >
-                <span className="text-xs font-bold opacity-80">WA</span>
-                Оценить бесплатно
-              </a>
-            )}
+
             {telegram && (
               <a
                 href={`https://t.me/${telegram}?text=${encodeURIComponent('Здравствуйте, хочу продать предмет.')}`}

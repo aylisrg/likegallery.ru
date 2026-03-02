@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 
 export default function AboutPage() {
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
+
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
 
   return (
@@ -95,16 +95,7 @@ export default function AboutPage() {
             Отправьте фото — мы ответим в течение нескольких часов
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            {whatsapp && (
-              <a
-                href={`https://wa.me/${whatsapp}?text=${encodeURIComponent('Здравствуйте, хочу оценить предмет.')}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold"
-              >
-                Написать в WhatsApp
-              </a>
-            )}
+
             {telegram && (
               <a
                 href={`https://t.me/${telegram}?text=${encodeURIComponent('Здравствуйте, хочу оценить предмет.')}`}

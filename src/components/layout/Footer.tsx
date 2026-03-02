@@ -4,11 +4,10 @@ import { Icons } from '@/components/ui/Icons'
 interface FooterProps {
   phone: string
   email: string
-  whatsapp: string
   telegram: string
 }
 
-export function Footer({ phone, email, whatsapp, telegram }: FooterProps) {
+export function Footer({ phone, email, telegram }: FooterProps) {
   const vkUrl = process.env.NEXT_PUBLIC_VK_URL ?? ''
   const rutubeUrl = process.env.NEXT_PUBLIC_RUTUBE_URL ?? ''
   const avitoUrl = process.env.NEXT_PUBLIC_AVITO_URL ?? ''
@@ -73,17 +72,6 @@ export function Footer({ phone, email, whatsapp, telegram }: FooterProps) {
 
               {/* Messengers Row */}
               <div className="flex gap-3 pt-2">
-                {whatsapp && (
-                  <a
-                    href={`https://wa.me/${whatsapp}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-dark flex items-center justify-center text-parchment hover:text-white hover:bg-[#25D366] transition-all border border-gold/20 hover:border-transparent"
-                    aria-label="WhatsApp"
-                  >
-                    <Icons.whatsapp className="w-5 h-5" />
-                  </a>
-                )}
                 {telegram && (
                   <a
                     href={`https://t.me/${telegram}`}

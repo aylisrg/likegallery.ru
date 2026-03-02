@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { MandalaDecoration } from './MandalaDecoration'
 
 export function HeroSection() {
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
+
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
   const generalMsg = encodeURIComponent('Здравствуйте, хочу оценить предмет. Можно отправить фото?')
 
@@ -95,17 +95,7 @@ export function HeroSection() {
 
         {/* Quick action buttons */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-12 animate-fade-in-up">
-          {whatsapp && (
-            <a
-              href={`https://wa.me/${whatsapp}?text=${generalMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#25D366] text-white font-semibold px-6 py-3.5 rounded-xl hover:opacity-90 transition-opacity shadow-lg min-w-[200px] justify-center"
-            >
-              <span className="text-xs font-bold opacity-80">WA</span>
-              Отправить фото
-            </a>
-          )}
+
           {telegram && (
             <a
               href={`https://t.me/${telegram}?text=${generalMsg}`}

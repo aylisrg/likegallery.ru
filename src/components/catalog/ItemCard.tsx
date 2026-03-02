@@ -12,10 +12,7 @@ export function ItemCard({ item }: ItemCardProps) {
   const isSold = status === 'sold'
   const isRestoration = status === 'restoration'
 
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
-  const soldMsg = encodeURIComponent(
-    `У меня есть предмет, похожий на «${title}», хочу продать. Можете оценить?`
-  )
+
 
   const imageUrl = mainImage
     ? urlFor(mainImage).width(600).height(800).auto('format').url()
@@ -31,9 +28,8 @@ export function ItemCard({ item }: ItemCardProps) {
             alt={mainImage?.alt ?? title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className={`object-cover transition-all duration-500 group-hover:scale-105 ${
-              isSold ? 'grayscale brightness-75' : ''
-            }`}
+            className={`object-cover transition-all duration-500 group-hover:scale-105 ${isSold ? 'grayscale brightness-75' : ''
+              }`}
           />
         ) : (
           <div className="absolute inset-0 bg-dark-soft flex items-center justify-center">
@@ -74,14 +70,12 @@ export function ItemCard({ item }: ItemCardProps) {
         {/* CTA */}
         <div className="pt-1">
           {isSold ? (
-            <a
-              href={`https://wa.me/${whatsapp}?text=${soldMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/catalog/${slug.current}`}
               className="block w-full text-center border border-gold/50 text-gold text-xs py-2.5 rounded-lg hover:bg-gold hover:text-dark transition-colors duration-200 font-semibold leading-tight px-2"
             >
               Владеете подобным? Купим дорого
-            </a>
+            </Link>
           ) : (
             <Link
               href={`/catalog/${slug.current}`}

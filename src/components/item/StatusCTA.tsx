@@ -6,7 +6,7 @@ interface StatusCTAProps {
 
 export function StatusCTA({ item }: StatusCTAProps) {
   const { title, category, status, price } = item
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
+
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
 
   if (status === 'sold') {
@@ -25,17 +25,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
           Мы купим его дорого. Отправьте фото — эксперт оценит бесплатно и быстро.
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          {whatsapp && (
-            <a
-              href={`https://wa.me/${whatsapp}?text=${soldMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
-            >
-              <span className="text-xs font-bold opacity-80">WA</span>
-              Продать через WhatsApp
-            </a>
-          )}
+
           {telegram && (
             <a
               href={`https://t.me/${telegram}?text=${soldMsg}`}
@@ -64,16 +54,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
         <p className="text-parchment/60 text-sm leading-relaxed">
           Предмет временно находится на реставрации. Свяжитесь с нами, чтобы узнать сроки.
         </p>
-        {whatsapp && (
-          <a
-            href={`https://wa.me/${whatsapp}?text=${restMsg}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline-gold w-full text-center"
-          >
-            Узнать подробности
-          </a>
-        )}
+
       </div>
     )
   }
@@ -94,17 +75,7 @@ export function StatusCTA({ item }: StatusCTAProps) {
         Задайте вопрос или обсудите покупку — ответим быстро
       </p>
       <div className="flex flex-col sm:flex-row gap-3">
-        {whatsapp && (
-          <a
-            href={`https://wa.me/${whatsapp}?text=${buyMsg}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white font-semibold px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
-          >
-            <span className="text-xs font-bold opacity-80">WA</span>
-            Купить / Обсудить
-          </a>
-        )}
+
         {telegram && (
           <a
             href={`https://t.me/${telegram}?text=${buyMsg}`}

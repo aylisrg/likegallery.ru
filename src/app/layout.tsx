@@ -24,7 +24,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const whatsapp = process.env.NEXT_PUBLIC_WHATSAPP ?? ''
+
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
   const wechat = process.env.NEXT_PUBLIC_WECHAT ?? ''
   const max = process.env.NEXT_PUBLIC_MAX ?? ''
@@ -43,11 +43,9 @@ export default function RootLayout({
         <Footer
           phone={phone}
           email={email}
-          whatsapp={whatsapp}
           telegram={telegram}
         />
         <StickyContactWidget
-          whatsapp={whatsapp}
           telegram={telegram}
           wechat={wechat}
           max={max}

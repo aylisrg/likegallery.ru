@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { ContactLink } from '@/components/ui/ContactLink'
 
 interface StickyContactWidgetProps {
-  whatsapp: string
   telegram: string
   wechat: string
   max: string
@@ -17,7 +16,6 @@ interface StickyContactWidgetProps {
 }
 
 export function StickyContactWidget({
-  whatsapp,
   telegram,
   wechat,
   max,
@@ -31,7 +29,7 @@ export function StickyContactWidget({
   const [isOpen, setIsOpen] = useState(false)
 
   // Don't render if no contacts configured
-  if (!whatsapp && !telegram) return null
+  if (!telegram) return null
 
   return (
     <>
@@ -39,9 +37,7 @@ export function StickyContactWidget({
       <div className="hidden md:flex fixed bottom-6 right-6 flex-col items-end gap-2.5 z-50">
         {isOpen && (
           <div className="flex flex-col gap-2 mb-1 animate-slide-in">
-            {whatsapp && (
-              <ContactLink type="whatsapp" value={whatsapp} message={message} label="WhatsApp" />
-            )}
+
             {telegram && (
               <ContactLink type="telegram" value={telegram} message={message} label="Telegram" />
             )}
@@ -86,9 +82,7 @@ export function StickyContactWidget({
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 max-h-[85vh] overflow-y-auto">
         {isOpen && (
           <div className="bg-dark/97 backdrop-blur border-t border-gold/30 p-3 grid grid-cols-2 gap-2 animate-slide-in">
-            {whatsapp && (
-              <ContactLink type="whatsapp" value={whatsapp} message={message} label="WhatsApp" fullWidth />
-            )}
+
             {telegram && (
               <ContactLink type="telegram" value={telegram} message={message} label="Telegram" fullWidth />
             )}
