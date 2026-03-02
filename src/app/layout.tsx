@@ -28,9 +28,6 @@ export default function RootLayout({
   const telegram = process.env.NEXT_PUBLIC_TELEGRAM ?? ''
 
   const max = process.env.NEXT_PUBLIC_MAX ?? ''
-  const avitoUrl = process.env.NEXT_PUBLIC_AVITO_URL ?? ''
-  const vkUrl = process.env.NEXT_PUBLIC_VK_URL ?? ''
-  const rutubeUrl = process.env.NEXT_PUBLIC_RUTUBE_URL ?? ''
   const phone = process.env.NEXT_PUBLIC_PHONE ?? ''
   const email = process.env.NEXT_PUBLIC_EMAIL ?? ''
 
